@@ -39,5 +39,6 @@ void				push_a(t_node **stack_a,
 						t_node **stack_b, t_node *stack_a_max);
 void				sort_three(t_node **stack_a);
 void				apply_to_b(t_node **stack_a, t_node **stack_b);
+void  				printstack_vizu(t_node *stack_a, t_node *stack_b);
 
 #endif

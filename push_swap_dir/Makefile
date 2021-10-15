@@ -23,7 +23,7 @@ LFTPATH = ../ft_printf/libft -lft
 CHKSRC = $(CHKDIR)debug.o $(CHKDIR)ft_atoi_validate.o $(CHKDIR)read_instructions.o $(CHKDIR)stack_functions.o \
 $(CHKDIR)push_values_to_stack.o $(CHKDIR)stack_functions2.o $(CHKDIR)utils.o
 
-PUSHSWSRC = push_swap_main.c stacklen.c sort.c sequence.c calc_funcs.c get_min_funcs.c utils.c under_5_funcs.c
+PUSHSWSRC = push_swap_main.c stacklen.c sort.c sequence.c calc_funcs.c get_min_funcs.c utils.c under_5_funcs.c vizu.c
 
 OBJ = $(PUSHSWSRC:.c=.o)
 
