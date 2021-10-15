@@ -6,7 +6,7 @@
 /*   By: nmustach <nmustach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 22:19:46 by nmustach          #+#    #+#             */
-/*   Updated: 2021/10/15 16:06:31 by nmustach         ###   ########.fr       */
+/*   Updated: 2021/10/15 18:46:41 by nmustach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	move_and_update_pointer(char *str, char **strnext, int is_num_ret)
 	return (1);
 }
 
-int	parse_and_push(char *str, t_node **stack_a)
+int	parse_and_push(char *str, t_node **stack_a, size_t *m)
 {
 	int		is_num_ret;
 	long	num;
@@ -43,7 +43,7 @@ int	parse_and_push(char *str, t_node **stack_a)
 				return (0);
 			if (!ft_atoi_validate(str, &num) || check_dublicates(num, *stack_a))
 				return (0);
-			ft_push(num, stack_a);
+			ft_push(num, stack_a, m);
 			str = strnext;
 		}
 		else

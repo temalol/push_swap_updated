@@ -6,7 +6,7 @@
 /*   By: nmustach <nmustach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 21:07:33 by nmustach          #+#    #+#             */
-/*   Updated: 2021/10/15 16:46:48 by nmustach         ###   ########.fr       */
+/*   Updated: 2021/10/15 20:44:15 by nmustach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,9 @@ typedef struct s_node
 # define NUM_OF_INSTR 11
 
 int				ft_atoi_validate(const char *str, long *num);
-int				push_values_to_stack(int argc, char **argv, t_node **stack_a);
-int				ft_push(long val, t_node **stack_a);
+int				push_values_to_stack(int argc, char **argv,
+					t_node **stack_a, size_t *m);
+int				ft_push(long val, t_node **stack_a, size_t *m);
 int				ft_isdigit(int c);
 void			stack_rev(t_node **stack);
 int				check_dublicates(long val, t_node *stack);
@@ -45,11 +46,12 @@ int				read_instructions(t_node **stack_a, t_node **stack_b);
 void			execute_instruction(int ins_num,
 					t_node **stack_a, t_node **stack_b);
 int				is_sorted(t_node *stack_a, t_node *stack_b);
-void			free_both_stacks(t_node *stack_a, t_node *stack_b);
-int				std_err(t_node *stack_a, t_node *stack_b);
+void			free_both_stacks(t_node *stack_a, t_node *stack_b, size_t *f);
+int				std_err(t_node *stack_a, t_node *stack_b, size_t *f);
 int				is_number(char *str);
-int				parse_and_push(char *str, t_node **stack_a);
+int				parse_and_push(char *str, t_node **stack_a, size_t *m);
 int				validate_sign(const char *str, int *flag, int *i);
+int				hangle_keys(char *argv);
 
 /*
 ** -------------------------- Debug Functions --------------------------------

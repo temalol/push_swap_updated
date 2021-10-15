@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   stack_functions2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmustach <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nmustach <nmustach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/24 21:31:00 by nmustach          #+#    #+#             */
-/*   Updated: 2020/03/25 00:12:13 by student          ###   ########.fr       */
+/*   Updated: 2021/10/15 19:03:34 by nmustach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int	std_err(t_node *stack_a, t_node *stack_b)
+int	std_err(t_node *stack_a, t_node *stack_b, size_t *f)
 {
-	free_both_stacks(stack_a, stack_b);
+	free_both_stacks(stack_a, stack_b, f);
 	write(STDERR_FILENO, "Error\n", 6);
 	return (0);
 }
