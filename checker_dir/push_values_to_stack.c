@@ -106,7 +106,7 @@ int	push_values_to_stack(int argc, char **argv, t_node **stack_a, size_t *m)
 		argcnt = 2;
 	else
 		argcnt = 1;
-	if (argc == 2 || argc == 3)
+	if (argc == 2 || (argc == 3 && m[1] > 0))
 		return (string_args_case(argv, stack_a, m, argcnt));
 	while (argcnt <= argc - 1)
 	{

@@ -27,7 +27,7 @@ int	hangle_keys(char *argv)
 {
 	if (argv[0] == '-')
 	{
-		if (argv[1] == 'm')
+		if (argv[1] == 'm' && !argv[2])
 			return (1);
 	}
 	return (0);
