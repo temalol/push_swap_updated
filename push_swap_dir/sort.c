@@ -91,8 +91,8 @@ t_node *stack_a_max, size_t key)
 			min_mv_node->delim = 1;
 			max_val_node = min_mv_node;
 		}
-		move_stacks(stack_a, stack_b, min_mv_node, key);
 		vizu_wrapper(*stack_a, *stack_b, key);
+		move_stacks(stack_a, stack_b, min_mv_node, key);
 	}
 }
 

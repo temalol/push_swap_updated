@@ -32,7 +32,7 @@ void	ra(t_node **stack_a, int output)
 		*stack_a = (*stack_a)->next;
 		last = last->next;
 		last->next = NULL;
-		if (output == 1)
+		if (output == 1 || output == 3)
 			ft_printf("ra\n");
 	}
 }
@@ -50,7 +50,7 @@ void	rb(t_node **stack_b, int output)
 		*stack_b = (*stack_b)->next;
 		last = last->next;
 		last->next = NULL;
-		if (output == 1)
+		if (output == 1 || output == 3)
 			ft_printf("rb\n");
 	}
 }
@@ -71,7 +71,7 @@ void	rra(t_node **stack_a, int output)
 		prev_last->next = NULL;
 		last->next = *stack_a;
 		*stack_a = last;
-		if (output == 1)
+		if (output == 1 || output == 3)
 			ft_printf("rra\n");
 	}
 }
@@ -92,7 +92,7 @@ void	rrb(t_node **stack_b, int output)
 		prev_last->next = NULL;
 		last->next = *stack_b;
 		*stack_b = last;
-		if (output == 1)
+		if (output == 1 || output == 3)
 			ft_printf("rrb\n");
 	}
 }

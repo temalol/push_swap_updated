@@ -22,7 +22,7 @@ void	sb(t_node **stack_b, int output)
 		(*stack_b)->next = next->next;
 		next->next = *stack_b;
 		(*stack_b) = next;
-		if (output == 1)
+		if (output == 1 || output == 3)
 			ft_printf("sb\n");
 	}
 }
@@ -37,7 +37,7 @@ void	sa(t_node **stack_a, int output)
 		(*stack_a)->next = next->next;
 		next->next = *stack_a;
 		(*stack_a) = next;
-		if (output == 1)
+		if (output == 1 || output == 3)
 			ft_printf("sa\n");
 	}
 }
@@ -52,7 +52,7 @@ void	pa(t_node **stack_a, t_node **stack_b, int output)
 		*stack_b = (*stack_b)->next;
 		tmp->next = *stack_a;
 		*stack_a = tmp;
-		if (output == 1)
+		if (output == 1 || output == 3)
 			ft_printf("pa\n");
 	}
 }
@@ -67,7 +67,7 @@ void	pb(t_node **stack_a, t_node **stack_b, int output)
 		*stack_a = (*stack_a)->next;
 		tmp->next = *stack_b;
 		*stack_b = tmp;
-		if (output == 1)
+		if (output == 1 || output == 3)
 			ft_printf("pb\n");
 	}
 }

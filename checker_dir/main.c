@@ -12,13 +12,20 @@
 
 #include "checker.h"
 
+void	handle_sorted(t_node *stack_a, t_node *stack_b)
+{
+	if (is_sorted(stack_a, stack_b))
+		ft_printf("OK\n");
+	else
+		ft_printf("KO\n");
+}
+
 int	main(int argc, char **argv)
 {
 	t_node	*stack_a;
 	t_node	*stack_b;
 	size_t	m[3];
-	size_t	f;
-	
+
 	m[0] = 0;
 	m[2] = 0;
 	stack_a = NULL;
@@ -27,15 +34,12 @@ int	main(int argc, char **argv)
 	{	
 		m[1] = hangle_keys(argv[1]);
 		if (!push_values_to_stack(argc, argv, &stack_a, m))
-			return (std_err(stack_a, stack_b, &f));
+			return (std_err(stack_a, stack_b, &m[2]));
 		if (stack_a->next)
 		{
 			if (!read_instructions(&stack_a, &stack_b))
-				return (std_err(stack_a, stack_b, &f));
-			if (is_sorted(stack_a, stack_b))
-				ft_printf("OK\n");
-			else
-				ft_printf("KO\n");
+				return (std_err(stack_a, stack_b, &m[2]));
+			handle_sorted(stack_a, stack_b);
 		}
 		free_both_stacks(stack_a, stack_b, &m[2]);
 		if (m[1] == 1)

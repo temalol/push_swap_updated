@@ -31,6 +31,8 @@ int	hangle_keys(char *argv)
 			return (1);
 		if (argv[1] == 'v' && !argv[2])
 			return (2);
+		if (argv[1] == 'd' && !argv[2])
+			return (3);
 	}
 	return (0);
 }

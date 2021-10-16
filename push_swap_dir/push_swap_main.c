@@ -18,10 +18,9 @@ int	main(int argc, char **argv)
 	t_node	*stack_b;
 	size_t	m[3];
 
-	m[0] = 0; //malloc
-	m[1] = 0; //key
-	m[2] = 0; //free
- 	
+	m[0] = 0;
+	m[1] = 0;
+	m[2] = 0;
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc >= 2)
