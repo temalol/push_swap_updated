@@ -45,7 +45,7 @@ void	get_commands_sum(t_node *stack_b)
 	stack_b->r_sum = sum;
 }
 
-void	align_stack_a(t_node **stack_a)
+void	align_stack_a(t_node **stack_a, size_t key)
 {
 	t_node	*min_node;
 	int		min_node_ind;
@@ -57,14 +57,14 @@ void	align_stack_a(t_node **stack_a)
 	{
 		while ((*stack_a)->val != min_node->val)
 		{
-			ra(stack_a, 1);
+			ra(stack_a, key);
 		}
 	}
 	else
 	{
 		while ((*stack_a)->val != min_node->val)
 		{
-			rra(stack_a, 1);
+			rra(stack_a, key);
 		}
 	}
 }
@@ -81,12 +81,12 @@ void	remove_max_values(t_node *stack_b)
 		stack_b->rrb_to_top = 0;
 }
 
-t_node	*push_b(t_node **stack_a, t_node **stack_b)
+t_node	*push_b(t_node **stack_a, t_node **stack_b, size_t key)
 {
 	t_node	*stack_a_top;
 	t_node	*stack_b_top;
 
-	apply_to_b(stack_a, stack_b);
+	apply_to_b(stack_a, stack_b, key);
 	stack_a_top = (*stack_a);
 	stack_b_top = (*stack_b);
 	while (stack_a_top->next)

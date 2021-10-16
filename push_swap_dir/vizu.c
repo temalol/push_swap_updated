@@ -35,3 +35,11 @@ void	printstack_vizu(t_node *stack_a, t_node *stack_b)
 	ft_printf("\n");
 	sleep(1);
 }
+
+void	vizu_wrapper(t_node *stack_a, t_node *stack_b, size_t flag)
+{
+	if (flag == 2)
+		printstack_vizu(stack_a, stack_b);
+	if (flag == 3)
+		printstack(stack_a, stack_b);
+}

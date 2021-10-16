@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 		if (!push_values_to_stack(argc, argv, &stack_a, m))
 			return (std_err(stack_a, stack_b, &m[2]));
 		if (!is_sorted(stack_a, stack_b) && stack_a->next)
-			sort(&stack_a, &stack_b);
+			sort(&stack_a, &stack_b, m[1]);
 		free_both_stacks(stack_a, stack_b, &m[2]);
 		if (m[1] == 1)
 			ft_printf("Malloc:%lu Free:%lu", m[0], m[2]);

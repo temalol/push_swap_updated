@@ -17,7 +17,7 @@
 
 int					find_sorted(t_node *stack_a, int flag);
 void				get_max_sequence(t_node *stack_a);
-void				sort(t_node **stack_a, t_node **stack_b);
+void				sort(t_node **stack_a, t_node **stack_b, size_t flag);
 t_node				*get_min_val(t_node *stack_a, int *min_node_ind);
 void				do_index(t_node *stack_a);
 void				remove_max_values(t_node *stack_b);
@@ -32,13 +32,14 @@ void				fit_to_second_part(t_node *stack_a,
 						t_node *stack_b, int stlen);
 t_node				*get_min_val(t_node *stack_a, int *min_node_ind);
 t_node				*get_min_r_sum(t_node *stack_b);
-void				align_stack_a(t_node **stack_a);
-t_node				*push_b(t_node **stack_a, t_node **stack_b);
+void				align_stack_a(t_node **stack_a, size_t key);
+t_node				*push_b(t_node **stack_a, t_node **stack_b, size_t key);
 int					sort_under_5(t_node **stack_a, t_node **stack_b);
 void				push_a(t_node **stack_a,
-						t_node **stack_b, t_node *stack_a_max);
+						t_node **stack_b, t_node *stack_a_max, size_t key);
 void				sort_three(t_node **stack_a);
-void				apply_to_b(t_node **stack_a, t_node **stack_b);
-void  				printstack_vizu(t_node *stack_a, t_node *stack_b);
+void				apply_to_b(t_node **stack_a, t_node **stack_b, size_t key);
+void				printstack_vizu(t_node *stack_a, t_node *stack_b);
+void				vizu_wrapper(t_node *stack_a, t_node *stack_b, size_t flag);
 
 #endif

@@ -47,16 +47,17 @@ void	fit(t_node *stack_a, t_node *stack_b)
 	}
 }
 
-void	move_stacks(t_node **stack_a, t_node **stack_b, t_node *min_mv_n)
+void	move_stacks(t_node **stack_a, t_node **stack_b,
+t_node *min_mv_n, size_t k)
 {
 	while (min_mv_n->ra_to_top--)
-		ra(stack_a, 1);
+		ra(stack_a, k);
 	while (min_mv_n->rra_to_top--)
-		rra(stack_a, 1);
+		rra(stack_a, k);
 	while (min_mv_n->rb_to_top--)
-		rb(stack_b, 1);
+		rb(stack_b, k);
 	while (min_mv_n->rrb_to_top--)
-		rrb(stack_b, 1);
+		rrb(stack_b, k);
 	while (min_mv_n->rr_to_top--)
 	{
 		ra(stack_a, 0);
@@ -69,10 +70,11 @@ void	move_stacks(t_node **stack_a, t_node **stack_b, t_node *min_mv_n)
 		rrb(stack_b, 0);
 		ft_printf("rrr\n");
 	}
-	pa(stack_a, stack_b, 1);
+	pa(stack_a, stack_b, k);
 }
 
-void	push_a(t_node **stack_a, t_node **stack_b, t_node *stack_a_max)
+void	push_a(t_node **stack_a, t_node **stack_b,
+t_node *stack_a_max, size_t key)
 {
 	t_node	*min_mv_node;
 	t_node	*max_val_node;
@@ -89,18 +91,24 @@ void	push_a(t_node **stack_a, t_node **stack_b, t_node *stack_a_max)
 			min_mv_node->delim = 1;
 			max_val_node = min_mv_node;
 		}
-		move_stacks(stack_a, stack_b, min_mv_node);
+		move_stacks(stack_a, stack_b, min_mv_node, key);
+		vizu_wrapper(*stack_a, *stack_b, key);
 	}
 }
 
-void	sort(t_node **stack_a, t_node **stack_b)
+void	sort(t_node **stack_a, t_node **stack_b, size_t key)
 {
 	t_node	*stack_a_max;
 
+	if (key == 0)
+		key = 1;
 	if (sort_under_5(stack_a, stack_b))
 		return ;
 	get_max_sequence(*stack_a);
-	stack_a_max = push_b(stack_a, stack_b);
-	push_a(stack_a, stack_b, stack_a_max);
-	align_stack_a(stack_a);
+	vizu_wrapper(*stack_a, *stack_b, key);
+	stack_a_max = push_b(stack_a, stack_b, key);
+	vizu_wrapper(*stack_a, *stack_b, key);
+	push_a(stack_a, stack_b, stack_a_max, key);
+	align_stack_a(stack_a, key);
+	vizu_wrapper(*stack_a, *stack_b, key);
 }

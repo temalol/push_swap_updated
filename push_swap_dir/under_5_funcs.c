@@ -33,8 +33,8 @@ void	sort_five(t_node **stack_a, t_node **stack_b)
 	(*stack_a)->next->next->delim = 1;
 	(*stack_b)->delim = 0;
 	(*stack_b)->next->delim = 0;
-	push_a(stack_a, stack_b, (*stack_a)->next->next);
-	align_stack_a(stack_a);
+	push_a(stack_a, stack_b, (*stack_a)->next->next, 1);
+	align_stack_a(stack_a, 1);
 }
 
 void	sort_three(t_node **stack_a)

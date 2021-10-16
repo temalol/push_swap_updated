@@ -25,7 +25,7 @@ size_t	stacklen_wo_delim(t_node *stack_a)
 	return (len);
 }
 
-void	apply_to_b(t_node **stack_a, t_node **stack_b)
+void	apply_to_b(t_node **stack_a, t_node **stack_b, size_t key)
 {
 	int		stlen;
 
@@ -33,9 +33,10 @@ void	apply_to_b(t_node **stack_a, t_node **stack_b)
 	while (stlen--)
 	{
 		if ((*stack_a)->stay)
-			ra(stack_a, 1);
+			ra(stack_a, key);
 		else
-			pb(stack_a, stack_b, 1);
+			pb(stack_a, stack_b, key);
+		vizu_wrapper(*stack_a, *stack_b, key);
 	}
 }
 
